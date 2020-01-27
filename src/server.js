@@ -33,15 +33,4 @@ app.get('/recipes/:ingredient', (req, res) => {
     })
 })
 
-
-
-
-
-
-
-
-
-
-
-
 app.listen(Port, () => console.log(`Server running on http://localhost:${Port}`))

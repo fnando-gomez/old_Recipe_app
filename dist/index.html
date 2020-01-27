@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html class="no-js"> 
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Recipe-app</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+        <h1>Your favorite recipe</h1>
+        <h3>Get delicious recipes with 1 click</h3>
+
+        <input type="text" size="25" id="ing" placeholder="Your ingredient here">
+        <button onclick= fetchRecipe() type="submit">Find your recipes</button>
+        
+        <div id="container"></div>
+
+        <script src= "/jquery/dist/jquery.js"></script>
+        <script src= "/handlebars/dist/handlebars.js" ></script>
+        
+        <script src= "render.js"></script>
+        <script src= "main.js"></script>
+    </body>
+        <!-- Handlebars Script -->
+        <script id="recipes-template" type="text/x-handlebars-template">
+            {{#each data}}
+                <div id="recipe"> <a href="{{ href }}"> {{ title}} </a></div>
+                <img src="{{ thumbnail }}">
+                <h4>Ingredients</h4>
+                    <ul id="ingredients" >
+                        {{#each ingredients}}
+                        <li>{{ this }}</li>
+                        {{/each}}
+                    </ul>
+            {{/each}}
+        </script>
+</html>
